@@ -1,39 +1,35 @@
 import React, { useState } from "react";
-import BookView from "./layOut/BookView";
 import Sidebar from "../../../common/layOut/Sidebar";
+import { Outlet } from "react-router-dom";
+// import ViewBooks from "./handleBook/viewbook/ViewBooks";
 import Header from "../../../common/layOut/Header";
 
-function HomeLayOut() {
+function AdminLayOut() {
   const [open, setOpen] = useState(false);
   const data = [
     {
-      name: "Library",
+      name: "ViewBook",
       icaon: "icon",
-      url: "home",
-    },
-    {
-      name: "borrowList",
-      icaon: "icon",
-      url: "borrow",
     },
   ];
+
   return (
     <div>
       <div>
-        <Header setOpen={setOpen} open={open} />
+        <Header open={open} setOpen={setOpen} />
       </div>
-      <div className="lg:flex-row sm:flex flex-col   ">
+      <div className="flex justify-between">
         {open && (
-          <div className="sticky">
+          <div>
             <Sidebar data={data} />
           </div>
         )}
-        <div className="w-full  p-10 ">
-          <BookView />
+        <div className="w-full p-5">
+          <Outlet />
         </div>
       </div>
     </div>
   );
 }
 
-export default HomeLayOut;
+export default AdminLayOut;

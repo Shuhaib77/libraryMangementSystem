@@ -68,7 +68,7 @@ function Auth({ name }) {
               value={formik.values[item.name]}
               errors={formik.errors}
             />
-            <span className="text-red-400">
+            <span className="text-red-400 text-sm">
               {formik.touched[item.name] && formik.errors[item.name]}
             </span>
           </div>

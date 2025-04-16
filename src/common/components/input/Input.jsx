@@ -1,14 +1,6 @@
 import React from "react";
 
-function Input({
-  placeholder,
-  type,
-  handleChange,
-  handleBlur,
-  value,
-  name,
-  errors,
-}) {
+function Input({ placeholder, type, handleChange, handleBlur, value, name,errors }) {
   const basicStyle = "w-full p-3 border rounded";
   return (
     <input
@@ -20,6 +12,7 @@ function Input({
       name={name}
       type={type}
     ></input>
+  
   );
 }
 
