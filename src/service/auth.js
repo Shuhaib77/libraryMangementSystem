@@ -4,7 +4,7 @@ import { addBook, listBook, updateBook } from "../../redux/bookSlice";
 
 export const register = async (values, navigate) => {
   const res = await api.post("/register", values);
-  navigate("/auth");
+  navigate("/");
 };
 export const login = async (values, navigate) => {
   try {

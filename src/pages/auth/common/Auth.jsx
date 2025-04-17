@@ -87,7 +87,7 @@ function Auth({ name }) {
           {name === "Login" ? (
             <h1
               onClick={() => {
-                navigate("/auth/register");
+                navigate("/register");
               }}
               className=""
             >
@@ -98,7 +98,7 @@ function Auth({ name }) {
             <h1
               className=""
               onClick={() => {
-                navigate("/auth");
+                navigate("/");
               }}
             >
               {" "}

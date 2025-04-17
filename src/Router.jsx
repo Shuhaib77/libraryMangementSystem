@@ -15,7 +15,7 @@ function UserRoute() {
   return (
     <div>
       <Routes>
-        <Route path="/auth" element={<AuthLayOut />}>
+        <Route path="/" element={<AuthLayOut />}>
           <Route index element={<Login />}></Route>
           <Route path="register" element={<Rregister />}></Route>
         </Route>
