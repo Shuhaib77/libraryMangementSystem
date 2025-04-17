@@ -1,20 +1,21 @@
 import React, { useState } from "react";
-import BookView from "./layOut/BookView";
+// import BookView from "./layOut/BookView";
 import Sidebar from "../../../common/layOut/Sidebar";
 import Header from "../../../common/layOut/Header";
+import { Outlet } from "react-router-dom";
 
 function HomeLayOut() {
   const [open, setOpen] = useState(false);
   const data = [
     {
       name: "Library",
-      icaon: "icon",
-      url: "home",
+      icon: "icon",
+      url: "bookview",
     },
     {
       name: "borrowList",
-      icaon: "icon",
-      url: "borrow",
+      icon: "icon",
+      url: "boorrow",
     },
   ];
   return (
@@ -29,7 +30,7 @@ function HomeLayOut() {
           </div>
         )}
         <div className="w-full  p-10 ">
-          <BookView />
+          <Outlet />
         </div>
       </div>
     </div>

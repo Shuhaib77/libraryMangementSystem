@@ -10,6 +10,12 @@ function AdminLayOut() {
     {
       name: "ViewBook",
       icaon: "icon",
+      url: "view",
+    },
+    {
+      name: "UpdateBook",
+      icaon: "icon",
+      url: "update",
     },
   ];
 

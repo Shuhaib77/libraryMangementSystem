@@ -25,7 +25,6 @@ function HandleBook() {
     author: bookData.author || "",
     image: bookData.image || "",
   };
-  
 
   const validationSchema = Yup.object({
     title: Yup.string().required("Required"),
@@ -36,18 +35,7 @@ function HandleBook() {
     image: Yup.mixed().required("Required"),
   });
 
-//   const onsubmit = async (values) => {
-//     if (isEdit) {
-//       console.log("Updating book with ID:", bookId);
-//       console.log("Updated values:", values);
-//       await dispatch(updateBook({ id: bookId, values }));
-//       dispatch(listBook(""));
-//       navigate("/books"); // redirect after update
-//     } else {
-//       console.log("Creating new book", values);
-//       // dispatch for createBook can go here
-//     }
-//   };
+
 
   const { formik } = UseAuth(
     initialvalue,
@@ -88,11 +76,10 @@ function HandleBook() {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-y-3 p-4 max-w-xl mx-auto">
-        <h2 className="text-2xl font-bold text-center mb-4">
-          {isEdit ? "Update Book Details" : "Add New Book"}
-        </h2>
-
+      <h2 className="text-2xl font-bold text-center mb-4 w-full">
+        {isEdit ? "Update Book Details" : "Add New Book"}
+      </h2>
+      <div className="grid grid-cols-2 place-content-center gap-y-3 gap-x-2  ">
         {field.map((item, i) => (
           <div key={i} className="mb-2">
             <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -114,15 +101,14 @@ function HandleBook() {
             )}
           </div>
         ))}
-
-        <Button
-          onClick={formik.handleSubmit}
-          className="bg-blue-500 text-white py-2 mt-4"
-          name={isEdit ? "Update Book" : "Add Book"}
-        />
       </div>
+      <Button
+        onClick={formik.handleSubmit}
+        className="bg-blue-500 text-white py-2 mt-4"
+        name={isEdit ? "Update Book" : "Add Book"}
+      />
 
-      <div className="mt-6">
+      <div className="">
         <h3 className="text-lg font-medium mb-2">Book Preview</h3>
         <ViewBookCard
           id={bookId}

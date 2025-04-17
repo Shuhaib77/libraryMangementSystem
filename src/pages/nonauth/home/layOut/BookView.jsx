@@ -40,7 +40,7 @@ function BookView({ name }) {
         </div>
         {loading && <p>Loading...</p>}
         {error && <p className="text-red-500">{error}</p>}
-        <div className="w-full grid shadow-xl rounded-2xl p-5 grid-cols-1 gap-y-5 lg:grid-cols-3 sm:gap-y-5 place-items-center gap-x-3 h-[65vh] overflow-auto">
+        <div className="w-full grid shadow-xl rounded-2xl p-5 grid-cols-1 gap-y-5 lg:grid-cols-3 sm:gap-y-5 place-items-center gap-x-2 h-[65vh] overflow-auto">
           {currentBooks.length > 0
             ? currentBooks.map((item) =>
                 name === "admin" ? (
@@ -63,6 +63,7 @@ function BookView({ name }) {
                     published={item?.published}
                     availableCopie={item?.availableCopie}
                     isbn={item.isbn}
+                    id={item._id}
                   />
                 )
               )

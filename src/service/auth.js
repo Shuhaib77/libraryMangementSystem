@@ -12,7 +12,7 @@ export const login = async (values, navigate) => {
     sessionStorage.setItem("id", res.data.data._id);
     sessionStorage.setItem("token", res.data.token);
     toast.success(res.data.message || "Login successful");
-    res.data.data?.role === "admin" ? navigate("/admin") : navigate("/home");
+    res.data.data?.role === "admin" ? navigate("/admin/view") : navigate("/home/bookview");
   } catch (error) {
     toast.error(error?.response?.data?.message || "Login failed");
   }
