@@ -1,4 +1,4 @@
-import { button } from "@material-tailwind/react";
+
 import React from "react";
 
 function Button({ name, className, type, onClick }) {
