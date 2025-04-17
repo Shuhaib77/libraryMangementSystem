@@ -32,8 +32,8 @@ function ProductView({
     }
   };
   const returnBook = async (id) => {
-    console.log(id,"ll");
-    
+    console.log(id, "ll");
+
     const result = await dispatch(returnBorrow(id));
 
     if (returnBorrow.fulfilled.match(result)) {
@@ -55,11 +55,11 @@ function ProductView({
             <img className="w-full h-full object-cover" src={image} alt="" />
           </div>
           <div className="pl-2">
-            <h1>{title}</h1>
-            <h1>{author}</h1>
-            <h1>{availableCopie}</h1>
-            <h1>{published}</h1>
-            <h1>{isbn}</h1>
+            <h1>title:{title}</h1>
+            <h1>author:{author}</h1>
+            <h1>availableCopie:{availableCopie}</h1>
+            <h1>published:{published}</h1>
+            <h1>isbn:{isbn}</h1>
             {name === "boorrow" ? (
               <Button
                 className={"bg-blue-300"}
